@@ -1,6 +1,6 @@
 ---
 layout: post
-comment: true
+comments: true
 title:  "Welcome to Jekyll!"
 date:   2017-05-25 00:07:41 +0900
 categories: jekyll update
@@ -24,3 +24,5 @@ Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most ou
 [jekyll-docs]: https://jekyllrb.com/docs/home
 [jekyll-gh]:   https://github.com/jekyll/jekyll
 [jekyll-talk]: https://talk.jekyllrb.com/
+
+{% include disqus.html %}
