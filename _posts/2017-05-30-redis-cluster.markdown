@@ -50,8 +50,12 @@ src/redis-trib.rb create 192.168.58.11:6379 192.168.58.12:6379 192.168.58.13:637
 
 3대의 서버를 클러스터로 묶었다. –replicas 옵션이 없기 때문에 슬레이브는 따로 구성되지 않았다.
 
+참고자료
+
 <https://redis.io/topics/cluster-tutorial>
+
 <http://www.redisgate.com/redis/cluster/cluster_introduction.php>
+
 <http://blog.leekyoungil.com/?p=206>
 
 {% include disqus.html %}
