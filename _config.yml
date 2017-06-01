@@ -27,6 +27,9 @@ github_username: kwangsama
 # disqus shortname
 disqus: kwangsama-github-io
 
+google-analytics:
+  id: "UA-100362930-1"
+
 # Build settings
 markdown: kramdown
 theme: minima
