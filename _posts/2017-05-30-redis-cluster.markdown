@@ -59,3 +59,4 @@ src/redis-trib.rb create 192.168.58.11:6379 192.168.58.12:6379 192.168.58.13:637
 <http://blog.leekyoungil.com/?p=206>
 
 {% include disqus.html %}
+{% include analytics.html %}
