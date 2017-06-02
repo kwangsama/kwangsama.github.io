@@ -41,14 +41,13 @@ appendonly yes
 src/redis-server redis.conf
 {% endhighlight %}
 
-클러스터로 묶을 ip 연결
-
-
 3대의 서버에 레디스를 설치하고 클러스터 모드로 시작했다면 루비 스크립트를 이용해서 클러스터로 묶을수 있다.
 
+{% highlight shell %}
 src/redis-trib.rb create 192.168.58.11:6379 192.168.58.12:6379 192.168.58.13:6379
+{% endhighlight %}
 
-3대의 서버를 클러스터로 묶었다. –replicas 옵션이 없기 때문에 슬레이브는 따로 구성되지 않았다.
+3대의 서버를 클러스터로 묶었다. –replicas 옵션이 주지 않았기 때문에 슬레이브는 구성되지 않았다.
 
 참고자료
 
