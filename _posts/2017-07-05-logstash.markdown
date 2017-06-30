@@ -1,0 +1,52 @@
+---
+layout: post
+comments: true
+title:  "logstash 간단 정리"
+date:   2017-07-04 23:00:00 +0900
+categories: elk
+---
+
+logstash는 데이터를 처리하는 파이프라인으로 데이터를 수집하고, 변환하고, 출력 할 수 있다.
+
+# 파이프라인
+파이프라인은 크게 3단계로 input, filter, output로 구분 된다.
+
+## input
+다양한 이벤트 소스에서 로그를 수집 할 수 있다.
+input 종류는 플러그인 형태로 제공이 되고 https://www.elastic.co/guide/en/logstash/current/input-plugins.html 에서 확인 가능하다.
+프로젝트에서는 주로 nginx, php-fpm, application log를 수집했기 때문에 file input을 활용했다.
+
+## filter
+input에서 수집된 데이터를 분석하고 변환하는 역활을 한다.
+
+## output
+데이터의 출력을 담당한다.
+logstash는 보통 elasticsearh로 전송하는 경우가 많고 다른 restapi서버로 전송이 필요하면 http 플러그인을 사용하면 된다.
+https://www.elastic.co/guide/en/logstash/current/output-plugins.html
+
+## codec
+코덱은 데이터의 형태를 변경해주는데, json 형태 혹은 multiline처럼 여러 메세지를 병합하는 등의 작업을 수행해준다.
+
+# 제공되는 api
+logstash의 상태를 조회할수 있는 restapi를 지원하고 있다.
+
+- Node Info API
+types : pipeline, os, jvm
+
+{% highlight shell %}
+curl -XGET 'localhost:9600/_node/<types>'
+{% endhighlight %}
+
+- Plugins Info API
+{% highlight shell %}
+curl -XGET 'localhost:9600/_node/plugins?pretty'
+{% endhighlight %}
+
+./bin/logstash-plugin list 명령어로 동일하게 플러그인의 상태를 확인 할 수 있다.
+
+
+
+
+
+{% include disqus.html %}
+{% include analytics.html %}
