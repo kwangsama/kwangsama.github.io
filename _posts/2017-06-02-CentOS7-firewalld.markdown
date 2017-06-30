@@ -21,21 +21,25 @@ systemctl list-units --type service
 firewalld의 관리는 firewall-cmd 도구를 이용해 컨트롤한다.
 
 {% highlight shell %}
+#=> 목록
+firewall-cmd --get-services
+
 #=> 상태확인
-firewall-cmd -- state
+firewall-cmd --state
 
 #=> 추가 / 삭제
 firewall-cmd --permanent --zone=public --add-port=3306/tcp
 firewall-cmd --permanent --zone=public --remove-port=3306/tcp
 
 #=> relaod
-firewall-cmd -- reload
+firewall-cmd --reload
 
 {% endhighlight %}
 
 참고 자료
 
 <https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/System_Administrators_Guide/sect-Managing_Services_with_systemd-Services.html>
+
 <https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Security_Guide/sec-Using_Firewalls.html>
 
 {% include disqus.html %}
